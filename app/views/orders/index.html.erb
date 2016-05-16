@@ -1,0 +1,20 @@
+<table class="table striped">
+  <tr>
+    <th>Kunde</th>
+    <th>Bestelldatum</th>
+    <th>Produkt</th>
+    <th>Preis</th>
+    <th></th>
+  </tr>
+  <% @orders.each do |order| %>
+    <tr>
+      <td><%= "#{order.customer.first_name} #{order.customer.last_name}" %>
+      <td><%= order.order_date %></td>
+      <td><%= order.product %></td>
+      <td><%= number_to_currency order.price/100, locale: :de  %></td>
+      <td>
+        <%= link_to 'Download', download_order_path(order) %>
+      </td>
+    </tr>
+  <% end %>
+</table>
