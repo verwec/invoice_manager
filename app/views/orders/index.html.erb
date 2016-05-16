@@ -9,11 +9,14 @@
   <% @orders.each do |order| %>
     <tr>
       <td><%= "#{order.customer.first_name} #{order.customer.last_name}" %>
-      <td><%= order.order_date %></td>
-      <td><%= order.product %></td>
+      <td><%= l order.order_date %></td>
+      <td><small><%= order.product %><small></td>
       <td><%= number_to_currency order.price/100, locale: :de  %></td>
       <td>
-        <%= link_to 'Download', download_order_path(order) %>
+        <%= link_to download_order_path(order) do %>
+        <i class="fa fa-file-pdf-o"></i> Rechnung
+        <% end %>
+
       </td>
     </tr>
   <% end %>

@@ -3,7 +3,7 @@ class Order < ActiveRecord::Base
   belongs_to :customer
 
   def to_invoice_pdf
-
+    InvoiceService.new(self).generate
   end
 
   def self.import(file)

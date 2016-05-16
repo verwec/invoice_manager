@@ -10,6 +10,6 @@ class OrdersController < ApplicationController
 
   def download
     order = Order.find(params[:id])
-    order.to_invoice_pdf
+    send_data order.to_invoice_pdf, filename: "#{order.order_uid}.pdf", type: 'application/pdf'
   end
 end

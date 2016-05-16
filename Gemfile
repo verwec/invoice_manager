@@ -14,6 +14,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
+gem "invoice_generator", :git => 'git://github.com/verwec/invoice_generator.git'
 
 group :development, :test do
   gem 'byebug'
