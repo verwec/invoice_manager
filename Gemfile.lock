@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/verwec/invoice_generator.git
-  revision: e47eec0d210efc76477b1304c5bfaf348b1a9a37
+  revision: f14f1953e7adcfee6c842b0c3d2bcb64df320309
   specs:
-    invoice_generator (0.1.0)
+    invoice_generator (0.1.1)
       prawn
 
 GEM
@@ -59,6 +59,7 @@ GEM
     commonjs (0.2.7)
     concurrent-ruby (1.0.2)
     debug_inspector (0.0.2)
+    dotenv (2.1.1)
     erubis (2.7.0)
     execjs (2.6.0)
     globalid (0.3.6)
@@ -94,6 +95,7 @@ GEM
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     pdf-core (0.6.1)
+    pg (0.18.4)
     prawn (2.1.0)
       pdf-core (~> 0.6.1)
       ttfunk (~> 1.4.0)
@@ -182,10 +184,12 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
+  dotenv
   invoice_generator!
   jbuilder (~> 2.0)
   jquery-rails
   less-rails
+  pg
   pry
   rails (= 4.2.6)
   sass-rails (~> 5.0)
