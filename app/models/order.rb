@@ -16,6 +16,8 @@ class Order < ActiveRecord::Base
       from = Date.strptime(matches[1], "%d.%m.%y")
       to = Date.strptime(matches[2], "%d.%m.%y")
 
+      payment_date = from.advance(days: -14)
+
       customer = Customer.create(
         first_name: row[21],
         last_name: row[19],
@@ -31,7 +33,8 @@ class Order < ActiveRecord::Base
         course_end: to,
         price: price,
         product: row[4],
-        order_date: row[2]
+        order_date: row[2],
+        payment_date: payment_date
       )
     end
   end

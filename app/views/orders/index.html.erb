@@ -5,6 +5,7 @@
     <th>Produkt</th>
     <th>Preis</th>
     <th></th>
+    <th></th>
   </tr>
   <% @orders.each do |order| %>
     <tr>
@@ -14,9 +15,13 @@
       <td><%= number_to_currency order.price/100, locale: :de  %></td>
       <td>
         <%= link_to download_order_path(order) do %>
-        <i class="fa fa-file-pdf-o"></i> Rechnung
+          <i class="fa fa-file-pdf-o"></i> Rechnung
         <% end %>
-
+      </td>
+      <td>
+        <%= link_to edit_order_path(order) do %>
+          <i class="fa fa-edit"></i>
+        <% end %>
       </td>
     </tr>
   <% end %>

@@ -14,8 +14,6 @@ class InvoiceService < Struct.new(:order)
       "Gesamtbetrag:    #{gross_price} € "
 
 
-      payment_date = course_start.advance(days: -14)
-
       payment_sentence =
         if order_date < payment_date
           "bis zum #{I18n.l(payment_date)}"

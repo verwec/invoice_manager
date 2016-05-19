@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160517161609) do
+ActiveRecord::Schema.define(version: 20160519191724) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "customers", force: :cascade do |t|
     t.string   "first_name"
@@ -33,6 +36,7 @@ ActiveRecord::Schema.define(version: 20160517161609) do
     t.integer  "order_uid"
     t.date     "course_start"
     t.date     "course_end"
+    t.date     "payment_date"
   end
 
 end
