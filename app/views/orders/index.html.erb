@@ -10,7 +10,7 @@
     <tr>
       <td><%= "#{order.customer.first_name} #{order.customer.last_name}" %>
       <td><%= l order.order_date %></td>
-      <td><small><%= order.product %><small></td>
+      <td><small><%= order.product %><small><br><%= "#{l(order.course_start)} - #{l(order.course_end)}" %></td>
       <td><%= number_to_currency order.price/100, locale: :de  %></td>
       <td>
         <%= link_to download_order_path(order) do %>
