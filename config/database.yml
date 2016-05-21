@@ -1,11 +1,13 @@
-development: &default
-  adapter: postgresql
-  database: backbone_data_bootstrap_development
-  min_messages: WARNING
-  pool: 5
-  username: postgres
-  host: db
+---
+
+development:
+  url: <%= ENV['DATABASE_URL'].gsub('?', '_development?') %>
 
 test:
-  <<: *default
-  database: backbone_data_bootstrap_test
+  url: <%= ENV['DATABASE_URL'].gsub('?', '_test?') %>
+
+staging:
+  url: <%= ENV['DATABASE_URL'].gsub('?', '_staging?') %>
+
+production:
+  url: <%= ENV['DATABASE_URL'].gsub('?', '_production?') %>
