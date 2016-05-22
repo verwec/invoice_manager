@@ -5,7 +5,7 @@ ENV APP_HOME /myapp
 RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 ADD Gemfile* $APP_HOME/
-RUN bundle install
+RUN bundle install --jobs 4
 ADD . $APP_HOME
 
-CMD bin/rails server --port 3000 --binding 0.0.0.0
+CMD bundle exec unicorn -c config/unicorn.rb
