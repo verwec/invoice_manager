@@ -8,6 +8,6 @@ GC.respond_to?(:copy_on_write_friendly=) && GC.copy_on_write_friendly = true
 
 check_client_connection false
 
-after_fork do |server, worker|
+after_fork do |_server, _worker|
   defined?(ActiveRecord::Base) && ActiveRecord::Base.establish_connection
 end

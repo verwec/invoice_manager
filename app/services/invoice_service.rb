@@ -1,25 +1,23 @@
 class InvoiceService < Struct.new(:order)
-
   def generate
     formated_date = I18n.l(order_date)
     year = order_date.year
     subject = "Rechnungs-Nr.: #{order_uid}/#{year}"
-    gross_price = '%.2f' % (price/100.0)
-    net_price   = '%.2f' % (price/107.0)
-    interests = '%.2f' % (price/107.0*0.07)
+    gross_price = '%.2f' % (price / 100.0)
+    net_price   = '%.2f' % (price / 107.0)
+    interests = '%.2f' % (price / 107.0 * 0.07)
 
     order = "1x #{product} (#{I18n.l(course_start)} - #{I18n.l(course_end)}) <br><br>"\
       "Nettobetrag:       #{net_price} € <br>"\
       "7% MwSt.:             #{interests} € <br><br>"\
       "Gesamtbetrag:    #{gross_price} € "
 
-
-      payment_sentence =
-        if order_date < payment_date
-          "bis zum #{I18n.l(payment_date)}"
-        else
-          "umgehend"
-        end
+    payment_sentence =
+      if order_date < payment_date
+        "bis zum #{I18n.l(payment_date)}"
+      else
+        'umgehend'
+      end
 
     params = {
       date: formated_date,

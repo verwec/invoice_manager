@@ -13,8 +13,8 @@ class Order < ActiveRecord::Base
       reg = /(\d\d\.\d\d\.\d\d).*(\d\d\.\d\d\.\d\d)/
       matches = reg.match(row[5])
 
-      from = Date.strptime(matches[1], "%d.%m.%y")
-      to = Date.strptime(matches[2], "%d.%m.%y")
+      from = Date.strptime(matches[1], '%d.%m.%y')
+      to = Date.strptime(matches[2], '%d.%m.%y')
 
       payment_date = from.advance(days: -14)
 

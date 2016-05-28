@@ -11,32 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160519191724) do
-
+ActiveRecord::Schema.define(version: 20_160_519_191_724) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "customers", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "address"
-    t.string   "zipcode"
-    t.string   "city"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'customers', force: :cascade do |t|
+    t.string   'first_name'
+    t.string   'last_name'
+    t.string   'address'
+    t.string   'zipcode'
+    t.string   'city'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "orders", force: :cascade do |t|
-    t.date     "order_date"
-    t.string   "product"
-    t.integer  "customer_id"
-    t.integer  "price"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.integer  "order_uid"
-    t.date     "course_start"
-    t.date     "course_end"
-    t.date     "payment_date"
+  create_table 'orders', force: :cascade do |t|
+    t.date     'order_date'
+    t.string   'product'
+    t.integer  'customer_id'
+    t.integer  'price'
+    t.datetime 'created_at',   null: false
+    t.datetime 'updated_at',   null: false
+    t.integer  'order_uid'
+    t.date     'course_start'
+    t.date     'course_end'
+    t.date     'payment_date'
   end
-
 end
