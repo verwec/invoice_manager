@@ -14,9 +14,14 @@ web:
   - "80:80"
   links:
   - db
+  - mailcatcher
+
   volumes:
   - .:/myapp
-  environment:
-    RAILS_ENV: staging
   env_file:
     - .web.env
+
+mailcatcher:
+  image: schickling/mailcatcher
+  ports:
+    - "1080:1080"
