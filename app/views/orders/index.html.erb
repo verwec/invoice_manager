@@ -1,5 +1,6 @@
 <table class="table striped">
   <tr>
+    <th><%= t('orders.invoice_number') %></th>
     <th><%= t('orders.customer') %></th>
     <th><%= t('orders.order_date') %></th>
     <th><%= t('orders.product') %></th>
@@ -8,6 +9,8 @@
   </tr>
   <% @orders.each do |order| %>
     <tr>
+
+      <td class="invoice-number"><%= order.invoice_number %></td>
       <td class="customer-name"><%= "#{order.customer.first_name} #{order.customer.last_name}" %>
       <td class="order-date"><%= l order.order_date %></td>
       <td class="order-product"><small><%= order.product %><small><br><%= "#{l(order.course_start)} - #{l(order.course_end)}" %></td>

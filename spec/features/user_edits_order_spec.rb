@@ -19,4 +19,10 @@ feature 'User edits order' do
     click_button 'Order aktualisieren'
     expect(page).to have_content('New product name')
   end
+
+  scenario 'they edit the invoice_number' do
+    fill_in 'order_invoice_number', with: '001'
+    click_button 'Order aktualisieren'
+    expect(page).to have_content('001')
+  end
 end

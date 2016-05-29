@@ -8,3 +8,4 @@ de:
           course_start: 'Kursbeginn'
           course_end: 'Kursende'
           payment_date: 'Gewünschtes Zahlungsdatum'
+          invoice_number: 'Rechnungsnummer'

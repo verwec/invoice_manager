@@ -4,7 +4,9 @@ de:
     customer: 'Kunde'
     product: 'Kurs'
     price: 'Preis'
-    order_date: 'Bestelldattum'
+    order_date: 'Bestellt'
+    invoice_number: 'RG-Nr.'
+
   activerecord:
     errors:
       messages:
