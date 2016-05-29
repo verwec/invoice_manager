@@ -1,5 +1,10 @@
 ---
 de:
+  orders:
+    customer: 'Kunde'
+    product: 'Kurs'
+    price: 'Preis'
+    order_date: 'Bestelldattum'
   activerecord:
     errors:
       messages:

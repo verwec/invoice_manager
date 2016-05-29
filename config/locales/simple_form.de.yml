@@ -1,0 +1,10 @@
+de:
+  simple_form:
+    labels:
+      order:
+        edit:
+          price: 'Preis in Cent'
+          product: 'Kurs'
+          course_start: 'Kursbeginn'
+          course_end: 'Kursende'
+          payment_date: 'Gewünschtes Zahlungsdatum'

@@ -1,8 +1,8 @@
 <%= simple_form_for @order do |f| %>
-  <%= f.input :price, label:  "Preis in Cents" %>
-  <%= f.input :product, label: 'Kursbezeichnung' %>
-  <%= f.input :course_start, label: 'Kursbeginn' %>
-  <%= f.input :course_end, label: 'Kursende' %>
-  <%= f.input :payment_date, label: "Gewünschtes Zahlungsdatum" %>
+  <%= f.input :price %>
+  <%= f.input :product %>
+  <%= f.input :course_start %>
+  <%= f.input :course_end %>
+  <%= f.input :payment_date %>
   <%= f.button :submit, class: 'btn btn-success' %>
 <% end %></br>

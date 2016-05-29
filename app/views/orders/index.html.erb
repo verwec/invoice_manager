@@ -1,9 +1,9 @@
 <table class="table striped">
   <tr>
-    <th>Kunde</th>
-    <th>Bestelldatum</th>
-    <th>Produkt</th>
-    <th>Preis</th>
+    <th><%= t('orders.customer') %></th>
+    <th><%= t('orders.order_date') %></th>
+    <th><%= t('orders.product') %></th>
+    <th><%= t('orders.price') %></th>
     <th></th>
   </tr>
   <% @orders.each do |order| %>
