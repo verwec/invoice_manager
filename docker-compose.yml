@@ -1,5 +1,6 @@
 db:
   image: postgres:9.4.1
+  image: postgres:latest
   ports:
   - "5432:5432"
   env_file:
