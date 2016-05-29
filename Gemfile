@@ -7,6 +7,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'dotenv'
 gem 'pg'
 gem 'simple_form'
+gem 'capybara'
 
 gem 'jquery-rails'
 gem 'turbolinks'
@@ -19,6 +20,8 @@ gem 'invoice_generator', git: 'git://github.com/verwec/invoice_generator.git'
 gem 'unicorn'
 
 group :development, :test do
+  gem 'factory_girl_rails'
+  gem 'faker'
   gem 'rspec-rails', '~> 3.4'
   gem 'byebug'
   gem 'pry'
