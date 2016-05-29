@@ -5,7 +5,6 @@
     <th>Produkt</th>
     <th>Preis</th>
     <th></th>
-    <th></th>
   </tr>
   <% @orders.each do |order| %>
     <tr>
@@ -16,11 +15,9 @@
       <td>
         <%= link_to download_order_path(order) do %>
           <i class="fa fa-file-pdf-o"></i> Rechnung
-        <% end %>
-      </td>
-      <td>
+        <% end %></br>
         <%= link_to edit_order_path(order) do %>
-          <i class="fa fa-edit"></i>
+          <i class="fa fa-edit"></i> Bearbeiten
         <% end %>
       </td>
     </tr>
