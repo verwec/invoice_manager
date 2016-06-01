@@ -5,7 +5,7 @@ feature 'User edits order' do
 
   before do
     visit '/'
-    click_link 'Bearbeiten'
+    click_link 'Rechnung bearbeiten'
   end
 
   scenario 'they edit the price' do
