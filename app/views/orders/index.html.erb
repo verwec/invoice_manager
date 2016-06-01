@@ -4,23 +4,38 @@
     <th><%= t('orders.customer') %></th>
     <th><%= t('orders.order_date') %></th>
     <th><%= t('orders.product') %></th>
-    <th><%= t('orders.price') %></th>
     <th></th>
   </tr>
   <% @orders.each do |order| %>
-    <tr>
-
+    <tr class="<%= order.invoice_sent_at.present? ? "nil": nil %>">
       <td class="invoice-number"><%= order.invoice_number %></td>
-      <td class="customer-name"><%= "#{order.customer.first_name} #{order.customer.last_name}" %>
+      <td class="customer-name">
+        <strong><%= "#{order.customer.first_name} #{order.customer.last_name}" %></strong><br>
+        <small><%= order.customer.email %></small>
+      </td>
       <td class="order-date"><%= l order.order_date %></td>
-      <td class="order-product"><small><%= order.product %><small><br><%= "#{l(order.course_start)} - #{l(order.course_end)}" %></td>
-      <td class="order-price"><%= number_to_currency order.price/100, locale: :de  %></td>
+      <td class="order-product">
+        <small>
+          <%= order.product %><br>
+          <%= "#{l(order.course_start)} - #{l(order.course_end)}" %><br>
+          <%= number_to_currency order.price/100, locale: :de  %>
+        </small>
+      </td>
       <td>
-        <%= link_to download_order_path(order) do %>
-          <i class="fa fa-file-pdf-o"></i> Rechnung
-        <% end %></br>
         <%= link_to edit_order_path(order) do %>
-          <i class="fa fa-edit"></i> Bearbeiten
+          <i class="fa fa-edit"></i> <%= t('orders.edit_invoice') %>
+        <% end %></br>
+        <%= link_to download_order_path(order) do %>
+          <i class="fa fa-file-pdf-o"></i> <%= t('orders.download_invoice') %>
+        <% end %></br>
+        <% if order.invoice_sent_at.blank? %>
+          <%= link_to send_mail_order_path(order) do %>
+            <i class="fa fa-envelope"></i> <%= t('orders.mail_invoice') %>
+          <% end %>
+        <% else %>
+          <small class="label label-success">
+            <%= t('orders.mail_sent_notice', date: l(order.invoice_sent_at, format: :short)) %>
+          </small>
         <% end %>
       </td>
     </tr>

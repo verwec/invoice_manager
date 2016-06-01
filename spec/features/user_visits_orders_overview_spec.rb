@@ -11,6 +11,11 @@ feature 'User visits orders overview' do
     expect(page).to have_text(formated_name)
   end
 
+  scenario 'they see the full customer email' do
+    visit '/'
+    expect(page).to have_text(customer.email)
+  end
+
   scenario 'they see the orders order-date' do
     visit '/'
     formatted_date = I18n.l(order.order_date)
@@ -32,4 +37,19 @@ feature 'User visits orders overview' do
     visit '/'
     expect(page).to have_text('99,00 €')
   end
+
+  # context 'When an invoice already has been sent' do
+  #   scenario 'they see a marked order row' do
+  #     order.update(invoice_sent_at: Time.now)
+  #     visit '/'
+  #     expect(page).to have_selector('table tr.warning')
+  #   end
+  # end
+  #
+  # context 'When no invoice has been sent' do
+  #   scenario 'they see no marked order rows' do
+  #     visit '/'
+  #     expect(page).not_to have_selector('table tr.warning')
+  #   end
+  # end
 end

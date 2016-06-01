@@ -20,6 +20,7 @@ gem 'invoice_generator', git: 'git://github.com/verwec/invoice_generator.git'
 gem 'unicorn'
 
 group :development, :test do
+  gem 'timecop'
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails', '~> 3.4'

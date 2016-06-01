@@ -8,6 +8,12 @@ class OrdersController < ApplicationController
     redirect_to root_url
   end
 
+  def send_mail
+    order = Order.find(params[:id])
+    UserNotifier.invoice(order).deliver
+    redirect_to orders_path
+  end
+
   def edit
     @order = Order.find(params[:id])
   end

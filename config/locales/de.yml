@@ -6,6 +6,10 @@ de:
     price: 'Preis'
     order_date: 'Bestellt'
     invoice_number: 'RG-Nr.'
+    edit_invoice: 'Rechnung bearbeiten'
+    download_invoice: 'Rechnung herunterladen'
+    mail_invoice: 'Rechnung per Mail versenden'
+    mail_sent_notice: 'Rechnung versendet am %{date}'
 
   activerecord:
     errors:
