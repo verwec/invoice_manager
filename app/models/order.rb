@@ -26,9 +26,11 @@ class Order < ActiveRecord::Base
         city: row[25]
       )
 
+      year = Date.parse(row[2]).year
       price = row[14].to_i * 100
       customer.orders.create(
         order_uid: order_uid,
+        invoice_number: "#{order_uid}/#{year}",
         course_start: from,
         course_end: to,
         price: price,

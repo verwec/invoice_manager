@@ -18,6 +18,10 @@ describe Order do
         expect(order.order_uid).to eq 1
       end
 
+      it 'has an invoice number' do
+        expect(order.invoice_number).to eq('1/2015')
+      end
+
       it 'has a course_start' do
         expect(order.course_start.to_s).to eq '2016-02-15'
       end

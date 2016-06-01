@@ -1,8 +1,7 @@
 class InvoiceService < Struct.new(:order)
   def generate
     formated_date = I18n.l(order_date)
-    year = order_date.year
-    subject = "Rechnungs-Nr.: #{order_uid}/#{year}"
+    subject = "Rechnungs-Nr.: #{invoice_number}"
     gross_price = '%.2f' % (price / 100.0)
     net_price   = '%.2f' % (price / 107.0)
     interests = '%.2f' % (price / 107.0 * 0.07)
@@ -44,7 +43,7 @@ class InvoiceService < Struct.new(:order)
       salutation: 'Sehr geehrte Damen und Herren,',
       farewell: 'Vielen Dank!<br>Mit freundlich Grüßen<br>'
     }
-    InvoiceGenerator.generate_invoice("Rechung #{order_uid}.pdf", params).render
+    InvoiceGenerator.generate_invoice("rechnung_#{invoice_number.parameterize}.pdf", params).render
   end
 
   def method_missing(method_name, *arguments, &block)
