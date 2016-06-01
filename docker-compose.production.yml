@@ -1,0 +1,5 @@
+db:
+  image: postgres:9.4.1
+web:
+  environment:
+    RAILS_ENV: 'production'
